@@ -6,6 +6,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 
+<link rel="stylesheet" href="address-modal.css">
+<script src="address-modal.js"></script>
+<script src="address-validator.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJW1vf1_4VfoAFdRA9xX8HcHNE1c9qFLc&libraries=places&callback=initMap&solution_channel=GMP_QB_addressselection_v1_cAC" async defer></script>
+
 <style>
     #countdown {
         font-family: 'Roboto', sans-serif;
@@ -29,6 +34,8 @@
         <div id="confetti-box">
             <p id="countdown"></p>
 
+            <button id="address-form-modal-btn">I want mail</button>
+
             <!-- Add Custom CSS using buttonStyle="custom" customCss="URL" -->
             <!-- https://add-to-calendar-button.com/ -->
             <add-to-calendar-button 
@@ -46,6 +53,28 @@
             buttonsList hideTextLabelButton buttonStyle="round"
             >
             </add-to-calendar-button>
+
+            <div id="address-form-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Enter Address</p>
+                    <form action="https://formbold.com/s/677NK" method="POST">
+                        <input type="text" placeholder="Name" id="name-input" name="name" required />
+                        <input type="text" placeholder="Address" id="location-input" name="address" required />
+                        <input type="text" placeholder="Apt, Suite, etc (optional)" name="apt" />
+                        <input type="text" placeholder="City" id="locality-input" name="city" required />
+                        <div class="half-input-container">
+                            <input type="text" class="half-input" placeholder="State/Province"
+                                id="administrative_area_level_1-input" name="state" required />
+                            <input type="text" class="half-input" placeholder="Zip/Postal code" id="postal_code-input"
+                                name="postal" required />
+                        </div>
+                        <input type="text" placeholder="Country" id="country-input" name="country" required />
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
