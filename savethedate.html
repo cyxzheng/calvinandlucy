@@ -4,6 +4,8 @@
 <script src="confetti.js"></script>
 <link rel="stylesheet" href="confetti.css">
 
+<script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
+
 <style>
     #countdown {
         font-family: 'Roboto', sans-serif;
@@ -24,8 +26,27 @@
 
 <body>
     <div class="page-container">
-        <div id="confetti-box"><div>
-        <p id="countdown"></p>
+        <div id="confetti-box">
+            <p id="countdown"></p>
+
+            <!-- Add Custom CSS using buttonStyle="custom" customCss="URL" -->
+            <!-- https://add-to-calendar-button.com/ -->
+            <add-to-calendar-button 
+            name="Calvin+Lucy's Wedding" 
+            label="Save the Date!"
+            options="'Apple','Google','iCal|iCal Calendar File'" 
+            location="Sea to Sky Gondola, Squamish, BC, Canada"
+            startDate="2024-06-09" 
+            endDate="2024-06-09" 
+            startTime="15:00" 
+            endTime="22:00"
+            timeZone="America/Los_Angeles"
+            iCalFileName="Calvin+Lucy"
+            hideCheckmark
+            buttonsList hideTextLabelButton buttonStyle="round"
+            >
+            </add-to-calendar-button>
+        </div>
     </div>
 </body>
 
