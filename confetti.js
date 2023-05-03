@@ -74,6 +74,12 @@ const createConfetti = function(x, y, confettiItems) {
 
 document.addEventListener('DOMContentLoaded', function(e) {
   document.getElementById('confetti-box').addEventListener('pointerdown', function(e) {
-    createConfetti(e.pageX, e.pageY, 20);
+    console.log(e.target)
+    if (e.target == this) {
+        createConfetti(e.pageX, e.pageY, 20);
+    }
+    else if (e.target == document.getElementById('countdown')) {
+        createConfetti(e.pageX, e.pageY, 20);
+    }
   });
 });
