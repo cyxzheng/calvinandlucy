@@ -1,61 +1,60 @@
-"use strict";
-
-function initMap() {
-  const CONFIGURATION = {
-    "ctaTitle": "Submit",
-    "mapOptions": {"center":{"lat":37.4221,"lng":-122.0841},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":true,"zoom":11,"zoomControl":true,"maxZoom":22,"mapId":""},
-    "mapsApiKey": "AIzaSyAJW1vf1_4VfoAFdRA9xX8HcHNE1c9qFLc",
-    "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":false,"ctaControl":true}
-  };
-  const componentForm = [
-    'location',
-    'locality',
-    'administrative_area_level_1',
-    'country',
-    'postal_code',
-  ];
-
-  const getFormInputElement = (component) => document.getElementById(component + '-input');
-  const autocompleteInput = getFormInputElement('location');
-  const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
-    fields: ["address_components", "geometry", "name"],
-    types: ["address"],
-  });
-  autocomplete.addListener('place_changed', function () {
-    const place = autocomplete.getPlace();
-    if (!place.geometry) {
-      // User entered the name of a Place that was not suggested and
-      // pressed the Enter key, or the Place Details request failed.
-      window.alert('No details available for input: \'' + place.name + '\'');
-      return;
+var options = {
+  minimumInputLength: 1,
+  language: {
+    inputTooShort: function (args) {
+      return "";
     }
-    fillInAddress(place);
-  });
-
-  function fillInAddress(place) {  // optional parameter
-    const addressNameFormat = {
-      'street_number': 'short_name',
-      'route': 'long_name',
-      'locality': 'long_name',
-      'administrative_area_level_1': 'short_name',
-      'country': 'long_name',
-      'postal_code': 'short_name',
-    };
-    const getAddressComp = function (type) {
-      for (const component of place.address_components) {
-        if (component.types[0] === type) {
-          return component[addressNameFormat[type]];
-        }
-      }
-      return '';
-    };
-    getFormInputElement('location').value = getAddressComp('street_number') + ' '
-              + getAddressComp('route');
-    for (const component of componentForm) {
-      // Location field is handled separately above as it has different logic.
-      if (component !== 'location') {
-        getFormInputElement(component).value = getAddressComp(component);
-      }
+  },
+  ajax: {
+    url: 'https://autocomplete.geocoder.cit.api.here.com/6.2/suggest.json',
+    delay: 250,
+    dataType: 'json',
+    data: function (params) {
+      return {
+        query: params.term,
+        app_id: 'DemoAppId01082013GAL',
+        app_code: 'AJKnXv84fjrb0KIHawS0Tg',
+        country: 'USA, CAN'
+      };
+    },
+    processResults: function (data) {
+      return {
+        results: $.map(data.suggestions, function (obj) {
+          let houseNumber = obj.address.houseNumber ? obj.address.houseNumber : '';
+          let street = obj.address.street ? obj.address.street : '';
+          let city = obj.address.city ? obj.address.city : '';
+          let state = obj.address.state ? obj.address.state : '';
+          let country = obj.address.country ? obj.address.country : '';
+          let postalCode = obj.address.postalCode ? obj.address.postalCode : '';
+          return {
+            id: obj.locationId,
+            text: houseNumber + ' ' + street + ', ' + city + ', ' + state + ' ' + postalCode + ', ' + country,
+            streetaddr: houseNumber + ' ' + street,
+            city: city,
+            state: state,
+            postalCode: postalCode,
+            country: country
+          };
+        })
+      };
     }
+  },
+  escapeMarkup: function (markup) {
+    return markup;
   }
-}
+};
+document.addEventListener('DOMContentLoaded', function (e) {
+  $('#location').select2(options).on('select2:select', function (e) {
+    $.getJSON('https://geocoder.cit.api.here.com/6.2/geocode.json', {
+      app_id: 'DemoAppId01082013GAL',
+      app_code: 'AJKnXv84fjrb0KIHawS0Tg',
+      locationId: e.params.data.id
+    });
+
+    $("#location-input").val(e.params.data.streetaddr);
+    $("#city-input").val(e.params.data.city);
+    $("#state-input").val(e.params.data.state);
+    $("#postal-input").val(e.params.data.postalCode);
+    $("#country-input").val(e.params.data.country);
+  });
+});
