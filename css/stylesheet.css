@@ -1,0 +1,139 @@
+@keyframes rotating {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+.bg {
+  position: absolute;
+  right: 0;
+  top: 164px;
+  height: 800px;
+  z-index: -1;
+}
+
+.spinner {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.spinner #spinner {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: rotating 16s linear infinite;
+}
+.spinner #names {
+  position: absolute;
+  top: 53px;
+  left: 28px;
+}
+
+.lineBorder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+}
+.lineBorder .lines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 2px;
+  flex-grow: 1;
+}
+.lineBorder .lines .line {
+  height: 1px;
+  width: 100%;
+  background: #697687;
+}
+.lineBorder #countdown {
+  font-family: itc-avant-garde-gothic-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #697687;
+  text-align: center;
+}
+
+.content {
+  padding: 120px 0 184px 0;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.content img {
+  display: block;
+  height: 56px;
+}
+.content h1 {
+  font-family: ivypresto-headline, serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 96px;
+  line-height: 116px;
+  letter-spacing: 0.05em;
+  font-feature-settings: "ordn" on;
+  margin: 16px 0 64px 0;
+}
+.content h1 span {
+  color: #697687;
+}
+.content .details {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.content .details .serif {
+  font-family: ivypresto-headline, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.05em;
+  font-feature-settings: "ordn" on;
+}
+.content .details .sans {
+  font-family: itc-avant-garde-gothic-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #697687;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+}
+.buttons button {
+  font-family: itc-avant-garde-gothic-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 16px 48px;
+  border: 1px solid #697687;
+  color: #697687;
+  background: none;
+}
+.buttons button:hover {
+  color: #ffffff;
+  border: 1px solid #8AA391;
+  background-color: #8AA391;
+}/*# sourceMappingURL=stylesheet.css.map */

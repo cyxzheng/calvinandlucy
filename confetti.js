@@ -75,10 +75,8 @@ const createConfetti = function(x, y, confettiItems) {
 document.addEventListener('DOMContentLoaded', function(e) {
   document.getElementById('confetti-box').addEventListener('pointerdown', function(e) {
     console.log(e.target)
-    if (e.target == this) {
-        createConfetti(e.pageX, e.pageY, 20);
-    }
-    else if (e.target == document.getElementById('countdown')) {
+    if (e.target.getAttribute('id') != "address-form-modal-btn" &&
+        e.target.getAttribute('class') != "atcb-light") {
         createConfetti(e.pageX, e.pageY, 20);
     }
   });
