@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     // When the user clicks on the button, open the modal 
     btn.onclick = function () {
         console.log("clicked")
-        document.getElementById("address-form-modal").style["display"] = "block";
+        document.getElementById("address-form-modal").style["display"] = "flex";
         console.log(modal)
     }
 

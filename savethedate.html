@@ -18,6 +18,20 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="address-validator.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css"
+        integrity="sha512-tYKqO78H3mRRCHa75fms1gBvGlANz0JxjN6fVrMBvWL+vOOy200npwJ69OBl9XEsTu3yVUvZNrdWFIIrIf8FLg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.min.css"
+        integrity="sha512-8vDOoSF7kZUYkn7BiQulRCTvpRoenljlkQDZhM6+IqDJi5jHDH9QEYH9NfMBB8LlqiYc7O17YGxbGx7dOxKrpw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="https://use.typekit.net/pyq3sjk.css" />
     <link rel="stylesheet" href="css/stylesheet.css" />
 
@@ -87,11 +101,45 @@
                 </div>
             </div>
 
+            <div class="carousel">
+                <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
+                                <img src="assets/img/1.jpg" />
+                            </li>
+                            <li class="glide__slide">
+                                <img src="assets/img/2.jpg" />
+                            </li>
+                            <li class="glide__slide">
+                                <img src="assets/img/3.jpg" />
+                            </li>
+                            <li class="glide__slide">
+                                <img src="assets/img/4.jpg" />
+                            </li>
+                            <li class="glide__slide">
+                                <img src="assets/img/5.jpg" />
+                            </li>
+                            <li class="glide__slide">
+                                <img src="assets/img/6.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div id="address-form-modal" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Enter Address</p>
-                    <form action="https://formbold.com/s/677NK" method="POST">
+                    <div class="modalHeading">
+                        <span class="close">&times;</span>
+                        <h3>Enter Address</h3>
+                    </div>
+
+                    <form
+                        action="https://formbold.com/s/677NK"
+                        class="address"
+                        method="POST"
+                    >
                         <input
                             type="text"
                             placeholder="Name"
@@ -123,24 +171,20 @@
                             name="city"
                             required
                         />
-                        <div class="half-input-container">
-                            <input
-                                type="text"
-                                class="half-input"
-                                placeholder="State/Province"
-                                id="state-input"
-                                name="state"
-                                required
-                            />
-                            <input
-                                type="text"
-                                class="half-input"
-                                placeholder="Zip/Postal code"
-                                id="postal-input"
-                                name="postal"
-                                required
-                            />
-                        </div>
+                        <input
+                            type="text"
+                            placeholder="State/Province"
+                            id="state-input"
+                            name="state"
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="Zip/Postal code"
+                            id="postal-input"
+                            name="postal"
+                            required
+                        />
                         <input
                             type="text"
                             placeholder="Country"
@@ -148,10 +192,20 @@
                             name="country"
                             required
                         />
-                        <button type="submit">Submit</button>
+                        <button class="submit" type="submit">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <script>
+            new Glide(".glide", {
+                type: "carousel",
+                autoplay: 2000,
+                hoverpause: false,
+                animationDuration: 2500,
+                animationTimingFunc: "ease-in-out",
+            }).mount();
+        </script>
     </body>
 </html>

@@ -177,3 +177,117 @@
         background-color: #8AA391;
     }
 }
+
+.modalHeading {
+    margin-bottom: 16px;
+}
+
+input {
+    font-family: itc-avant-garde-gothic-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    padding: 16px 24px;
+    border-radius: 0;
+    border: 1px solid #D8E3DB;
+}
+
+input:focus-visible, input:focus {
+    outline: 1px solid #8AA391;
+}
+
+.select2-container--default .select2-selection--single {
+    font-family: itc-avant-garde-gothic-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    padding: 16px 24px;
+    border-radius: 0;
+    border: 1px solid #D8E3DB;
+    color: #697687;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+    top: 0;
+    right: 24px;
+    width: 24px;
+}
+
+#select2-location-container {
+    padding: 0;
+}
+
+.select2-container .select2-selection--single {
+    height: auto;   
+}
+
+.select2-search--dropdown {
+    padding: 16px 24px;
+}
+
+.select2-results {
+    font-family: itc-avant-garde-gothic-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    color: #697687;
+}
+
+.select2-results__option {
+    padding: 16px 24px;
+}
+
+form {
+    input {
+        flex-grow: 2;
+    }
+
+    .submit {
+        font-family: itc-avant-garde-gothic-pro, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 16px 48px;
+        border: 1px solid #697687;
+        color: #697687;
+        background: none;
+        flex-basis: 100%;
+        flex-grow: 1;
+    }
+
+    .submit:hover {
+        color: #ffffff;
+        border: 1px solid #8AA391;
+        background-color: #8AA391;
+    }
+}
+
+.carousel {
+    width: 100%;
+    margin-top: 144px;
+
+    img {
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+.glide:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, white 0%, transparent 75%);
+}

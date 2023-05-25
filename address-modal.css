@@ -2,6 +2,9 @@
 .modal {
     display: none;
     /* Hidden by default */
+
+    justify-content: center;
+    align-items: center;
     position: fixed;
     /* Stay in place */
     z-index: 1;
@@ -12,7 +15,7 @@
     /* Full width */
     height: 100%;
     /* Full height */
-    overflow: auto;
+    /*overflow: auto;*/
     /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
     /* Fallback color */
@@ -22,13 +25,30 @@
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
     margin: 15% auto;
     /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    padding: 48px;
+    width: 600px;
     /* Could be more or less, depending on screen size */
+}
+
+.address {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+h3 {
+    font-family: ivypresto-headline, serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 24px;
+        letter-spacing: 0.05em;
+        font-feature-settings: 'ordn' on;
+    margin: 0;
 }
 
 /* The Close Button */
