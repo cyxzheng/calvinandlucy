@@ -416,6 +416,12 @@
         text-align: center;
         color: #697687;
   }
+
+  @media screen and (max-width: 500px) {
+    .atcb-modal {
+        min-width: 100% !important;
+    }
+  }
   
   .atcb-modal-box {
     filter: var(--modal-shadow);
@@ -836,3 +842,12 @@
   .atcb-icon .atcb-icon-outlookcom svg {
     filter: var(--icon-filter);
   }
+
+  @media screen and (max-width: 500px) {
+    .atcb-button {
+        width: 100% !important;
+    }
+
+    .atcb-initialized {
+        width: 100% !important;
+    }

@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     to {
       -webkit-transform: rotate(0deg);
@@ -25,6 +29,11 @@
       -o-transform: rotate(360deg);
       transform: rotate(360deg);
     }
+}
+
+#confetti-box {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
+    width: 100%;
 }
 
 .bg {
@@ -99,7 +108,7 @@
 
     img {
         display: block;
-        height: 56px;
+        width: 320px;
     }
 
     h1 {
@@ -279,6 +288,7 @@ form {
     img {
         box-sizing: border-box;
         width: 100%;
+        display: block;
     }
 }
 
@@ -290,4 +300,136 @@ form {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, white 0%, transparent 75%);
+}
+
+.mobile-map {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .modal-content {
+        width: 100%;
+        padding: 24px;
+        margin: 16px;
+    }
+
+    .mobile-map {
+        display: block;
+        width: 100%;
+        height: 600px;
+        background-image: url('../assets/bg.png');
+        background-position: top right;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #confetti-box {
+        padding: 0;
+        margin-top: 24px;
+        overflow-x: hidden;
+
+        .bg {
+            display: none;
+        }
+    }
+
+    .carousel {
+        margin-top: 48px;
+    }
+
+    .glide:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, white 0%, transparent 50%);
+    }
+
+    .lineBorder {
+        text-align: center;
+        gap: 8px;
+        
+        #countdown {
+            max-width: 240px;
+        }
+        #spinner {
+            height: 132px;
+        }
+        #names {
+            top: 45px;
+            height: 48px;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        text-align: center;
+        align-items: center;
+        gap: 24px;
+
+        img {
+            width: 240px;
+            margin-top: 16px;
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 56px;
+            margin: 0;
+        }
+
+        .details {
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            gap: 8px;
+
+            .serif {
+                font-size: 24px;
+                line-height: 32px;
+            }
+            
+            .sans {
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+
+        .buttons {
+            flex-direction: column;
+            width: 100%;
+            gap: 8px;
+
+            button, add-to-calendar-button {
+                width: 100%;
+
+
+            }
+        }
+    }
+}
+
+.glide__slides {
+    // important needed because this is set using the style attribute
+    transform: translate3d(0, 0, 0) !important;
+}
+
+.glide__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    order: 2;
+    opacity: 0;
+    transition: opacity 2000ms ease-in-out;
+}
+
+.glide__slide.glide__slide--active {
+    position: relative;
+    order: 1;
+    opacity: 1;
+    z-index: 1;
 }
