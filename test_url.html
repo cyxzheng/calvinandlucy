@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<header>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function (e) {
+            // console.log("URL: " + window.location.href);
+            const url = new URL(window.location.href);
+            console.log("URL: " + url.search);
+            if (url.search.includes("submitted")) {
+                console.log("SUBMIT :)");
+                alert("Thanks!")
+            }
+        });
+    </script>
+</header>
+
+<body>
+
+    <div id="content-test">
+
+    </div>
+
+</body>
+
+</html>
