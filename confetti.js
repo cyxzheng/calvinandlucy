@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     console.log(e.target)
     if (e.target.getAttribute('id') != "address-form-modal-btn" &&
         e.target.getAttribute('class') != "atcb-light") {
-        createConfetti(e.pageX, e.pageY, 20);
+        createConfetti(e.clientX, e.clientY, 20);
     }
   });
 });
