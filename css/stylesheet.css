@@ -90,7 +90,7 @@ body {
   margin: 16px 0 64px 0;
 }
 .content h1 span {
-  color: #697687;
+  color: #8AA391;
 }
 .content .details {
   display: flex;
@@ -138,7 +138,7 @@ body {
   padding: 16px 48px;
   border: 1px solid #697687;
   color: #697687;
-  background: none;
+  background: rgba(255, 255, 255, 0.35);
 }
 .buttons button:hover {
   color: #ffffff;
@@ -298,12 +298,12 @@ form .submit:hover {
     display: block;
     width: 100%;
     height: 600px;
-    background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 80%, rgb(255, 255, 255) 100%), url("../assets/gondola.png");
+    background-image: linear-gradient(180deg, rgb(255, 255, 255) 45%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 90%, rgb(255, 255, 255) 100%), url("../assets/gondola.png");
     background-position: top right;
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 160px;
+    top: 172px;
     z-index: -1;
     opacity: 0.25;
   }
@@ -334,6 +334,10 @@ form .submit:hover {
   }
   .lineBorder #countdown {
     max-width: 260px;
+    color: #697687;
+  }
+  .lineBorder #countdown span {
+    color: #697687;
   }
   .lineBorder #spinner {
     height: 132px;
@@ -348,7 +352,7 @@ form .submit:hover {
     padding: 24px;
     text-align: center;
     align-items: center;
-    gap: 48px;
+    gap: 40px;
   }
   .content img {
     width: 240px;

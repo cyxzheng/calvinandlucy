@@ -165,7 +165,7 @@
     flex-grow: 1;
     border: 1px solid #697687;
     color: #697687;
-    background: none;
+    background: rgba(255, 255, 255, 0.35);
     /* align-items: center;
     background-color: var(--btn-background);
     border: 1px solid var(--btn-border);
