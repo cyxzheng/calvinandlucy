@@ -307,26 +307,65 @@ form {
 }
 
 @media screen and (max-width: 500px) {
+    .address {
+        gap: 8px;
+    }
+
+    input {
+        padding: 16px;
+    }
+
+    form input {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    #select2-location-container {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    form .submit {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 16px;
+    }
+
+    .select2-container--default .select2-selection--single {
+        padding: 16px;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        right: 8px;
+    }
+
     .modal-content {
         width: 100%;
         padding: 24px;
-        margin: 16px;
+        margin: 24px;
+        overflow: auto;
+        max-height: calc(100vh - 144px);
     }
 
     .mobile-map {
         display: block;
         width: 100%;
         height: 600px;
-        background-image: url('../assets/bg.png');
+        background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%), url('../assets/gondola.png');
         background-position: top right;
         background-size: cover;
         background-repeat: no-repeat;
+        position: absolute;
+        top: 160px;
+        z-index: -1;
+        opacity: 0.25;
     }
 
     #confetti-box {
         padding: 0;
         margin-top: 24px;
         overflow-x: hidden;
+        background: none;
 
         .bg {
             display: none;
@@ -352,7 +391,7 @@ form {
         gap: 8px;
         
         #countdown {
-            max-width: 240px;
+            max-width: 260px;
         }
         #spinner {
             height: 132px;
@@ -366,10 +405,10 @@ form {
     .content {
         display: flex;
         flex-direction: column;
-        padding: 16px;
+        padding: 24px;
         text-align: center;
         align-items: center;
-        gap: 24px;
+        gap: 48px;
 
         img {
             width: 240px;
