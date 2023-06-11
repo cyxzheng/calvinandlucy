@@ -45,12 +45,16 @@
 
 h3 {
     font-family: ivypresto-headline, serif;
-        font-weight: 300;
-        font-style: normal;
-        font-size: 24px;
-        letter-spacing: 0.05em;
-        font-feature-settings: 'ordn' on;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'ordn' on;
     margin: 0;
+}
+
+small {
+    font-family: itc-avant-garde-gothic-pro;
 }
 
 /* The Close Button */

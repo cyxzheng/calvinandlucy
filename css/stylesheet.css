@@ -70,6 +70,18 @@ body {
   text-align: center;
 }
 
+.invitations {
+  font-family: itc-avant-garde-gothic-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #697687;
+  text-align: center;
+}
+
 .content {
   padding: 120px 0 184px 0;
   max-width: 1080px;
