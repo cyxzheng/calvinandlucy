@@ -9,6 +9,19 @@ body {
     transform: rotate(360deg);
   }
 }
+.invitations p {
+  font-family: itc-avant-garde-gothic-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #697687;
+  text-align: center;
+  margin-top: 16px;
+}
+
 #confetti-box {
   background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 60%, rgba(255, 255, 255, 0) 100%);
   width: 100%;
@@ -63,18 +76,6 @@ body {
   font-weight: 500;
   font-style: normal;
   font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #697687;
-  text-align: center;
-}
-
-.invitations {
-  font-family: itc-avant-garde-gothic-pro, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 12px;
   line-height: 24px;
   letter-spacing: 0.08em;
   text-transform: uppercase;

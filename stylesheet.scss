@@ -31,6 +31,22 @@ body {
     }
 }
 
+.invitations {
+
+    p {    
+        font-family: itc-avant-garde-gothic-pro, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #697687;
+        text-align: center;
+        margin-top: 16px;
+    }
+}
+
 #confetti-box {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
     width: 100%;
